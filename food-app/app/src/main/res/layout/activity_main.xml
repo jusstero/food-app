@@ -8,8 +8,9 @@
     tools:context=".MainActivity">
 
     <EditText
-        android:id="@+id/searchEditText"
+        android:id="@+id/ingredientEditText"
         android:hint="Enter ingredient"
+        android:inputType="textCapSentences"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
@@ -26,17 +27,26 @@
         android:id="@+id/startSearchButton"
         android:onClick="searchRecipes"
         android:text="Search for Recipes"
-        android:enabled="true"
+        android:enabled="false"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
 
     <TextView
-        android:text="List of ingredients:"
+        android:text="List of ingredients"
         android:textSize="16sp"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/touchToDelete"
+        android:text="Touch ingredient to delete from list"
+        android:textSize="12sp"
+        android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        />
+        android:visibility="invisible" />
 
     <ListView
         android:id="@+id/listViewOfIngredients"

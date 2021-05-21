@@ -9,15 +9,19 @@ import java.net.URL
 import kotlin.concurrent.thread
 import com.fasterxml.jackson.module.kotlin.*
 
+/**
+ * Calls for [getUrl] in a new thread and calls for the given callback function.
+ */
 fun downloadUrlAsync(activity: Activity, s: String, callback: (result : String?) -> Unit) {
     thread() {
         var result = getUrl(s)
-        activity.runOnUiThread {
-            callback(result)
-        }
+        callback(result)
     }
 }
 
+/**
+ * Reads data from the given [url] and returns it as a string
+ */
 fun getUrl(url: String) : String? {
     var myUrl = URL(url)
     var conn = myUrl.openConnection() as HttpURLConnection
@@ -40,8 +44,39 @@ fun getUrl(url: String) : String? {
 
 }
 
-fun parseRecipeJson(jsonAsString: String) : MutableList<Recipe>? {
+/**
+ * Parses the recipe list JSON into a MutableList full of Recipe objects and returns it.
+ */
+fun parseRecipeResultsJSON(jsonAsString: String) : MutableList<Recipe>? {
     val mapper = ObjectMapper()
-    var recipeList : MutableList<Recipe> = mapper.readValue(jsonAsString)
-    return recipeList
+    return mapper.readValue(jsonAsString)
+}
+
+/**
+ * Parses the recipe json into a RecipeJsonObject and returns it.
+ */
+fun parseSingleRecipeJSON(jsonAsString: String) : RecipeJsonObject {
+    val mapper = ObjectMapper()
+    return mapper.readValue(jsonAsString, RecipeJsonObject::class.java)
+}
+
+/**
+ * Forms url for recipe list api call using the [ingredientsString] that is formed from user given ingredients.
+ */
+fun formRecipeListJSONUrl(ingredientsString: String) : String {
+    val key = "MYKEY"
+    val base = "https://api.spoonacular.com/recipes/findByIngredients?apiKey=$key&"
+    val args = "ingredients=$ingredientsString"
+    return base + args
+
+}
+
+/**
+ * Forms url for single recipe api call.
+ */
+fun formRecipeByIdJSONUrl(recipeId: Int?) : String {
+    val key = "MYKEY"
+    val base = "https://api.spoonacular.com/recipes/$recipeId/information?apiKey=$key&"
+    val args = "includeNutrition=true"
+    return base + args
 }
