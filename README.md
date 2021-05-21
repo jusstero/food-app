@@ -21,7 +21,7 @@ Uses the free version of [spoonacular API](https://spoonacular.com/food-api) for
 - User is able to delete ingredients from the ingredient list
 - Recipe list is now in a new activity
 - User can click on an recipe from the recipe list to open the recipe to a new activity
-- Once recipe is clicked, new activity displays to the user with nutritient, ingredient and cooking time information.
+- Once recipe is clicked, new activity displays to the user with recipe nutritient, ingredient and cooking time information.
 - User can open website containing the original recipe.  
 
 
