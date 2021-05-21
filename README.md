@@ -2,12 +2,9 @@
 
 **Name:** Tero Jussinniemi
 
-**Topic:** App where the user can input an ingredient, and the app will return results of recipes with the given ingredient using the free version of spoonacular API (https://spoonacular.com/food-api). List of recipes will be displayed in the app, user can be redirected to website/video containing their chosen recipe.
+**Topic:** Mobile application where the user can input ingredients, and the app will return results of recipes with the given ingredients. List of recipes will be displayed in the app, from which the user can choose a recipe. After choosing a recipe, user will be presented information about the recipe, and can redirected to websitecontaining the original recipe.
 
-*Possible list of features*
-- Find recipes based on given ingredient(s)
-- Limit the results using filters (e.g. total calories, total protein, cuisine)
-- Exclude recipes containing certain ingredients from results (allergies or preference)    
+Uses the free version of [spoonacular API](https://spoonacular.com/food-api) for recipes.
 
 **Target:** Android/Kotlin
 
@@ -18,3 +15,16 @@
 - User is able to see a list of the given ingredients in the UI
 - User can search for recipes with the ingredient list
 - Once the search is finished, a list of recipes with the recipe name and picture of the recipe is displayed to the user 
+
+
+**Release 2: 2021-05-21 features:**
+- User is able to delete ingredients from the ingredient list
+- Recipe list is now in a new activity
+- User can click on an recipe from the recipe list to open the recipe to a new activity
+- Once recipe is clicked, new activity displays to the user with nutritient, ingredient and cooking time information.
+- User can open website containing the original recipe.  
+
+
+**Screencast (timestamps in video description)**
+
+[![FoodApp screencast](https://img.youtube.com/vi/iiUVnTGRCb4/0.jpg)](https://www.youtube.com/watch?v=iiUVnTGRCb4 "FoodApp screencast")
