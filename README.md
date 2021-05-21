@@ -24,6 +24,9 @@ Uses the free version of [spoonacular API](https://spoonacular.com/food-api) for
 - Once recipe is clicked, new activity displays to the user with recipe nutritient, ingredient and cooking time information.
 - User can open website containing the original recipe.  
 
+**Known bugs**
+- No setup for when [API points run out](https://spoonacular.com/food-api/faq) ("What are points" in the FAQ link).
+- Ingredient adding only has a check for whitespaces.
 
 **Screencast (timestamps in video description)**
 
