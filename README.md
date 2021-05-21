@@ -10,3 +10,11 @@
 - Exclude recipes containing certain ingredients from results (allergies or preference)    
 
 **Target:** Android/Kotlin
+
+
+**Release 1: 2021-05-12 features:**
+
+- User is able to add ingredients to a list
+- User is able to see a list of the given ingredients in the UI
+- User can search for recipes with the ingredient list
+- Once the search is finished, a list of recipes with the recipe name and picture of the recipe is displayed to the user 
